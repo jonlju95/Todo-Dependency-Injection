@@ -4,10 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import se.ecutb.data.*;
-import se.ecutb.service.CreatePersonService;
-import se.ecutb.service.CreatePersonServiceImpl;
-import se.ecutb.service.CreateTodoService;
-import se.ecutb.service.CreateTodoServiceImpl;
+import se.ecutb.service.*;
 
 @Configuration
 @ComponentScan("se.ecutb.jonatanl")
@@ -30,4 +27,11 @@ public class AppConfig {
 
     @Bean
     public CreateTodoService createTodoService() { return new CreateTodoServiceImpl(); }
+
+    @Bean
+    public PersonDtoConversionService personDtoConversionService() { return new PersonDtoConversionServiceImpl(); }
+
+    @Bean
+    public TodoDtoConversionService todoDtoConversionService() { return new TodoDtoConversionServiceImpl(); }
+
 }
