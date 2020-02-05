@@ -23,14 +23,10 @@ public class TodoServiceImpl implements TodoService {
         try {
             newTodo = todoService.createTodo(taskDescription, deadLine, assignee);
             todoList.add(newTodo);
-            System.out.println(newTodo);
             return newTodo;
         }catch (IllegalArgumentException e) {
-            return null;
         }
-        finally {
-            todoList.add(newTodo);   
-        }
+        return null;
     }
 
     @Override
