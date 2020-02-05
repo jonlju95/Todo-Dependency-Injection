@@ -92,7 +92,7 @@ public class PersonRepositoryImpl implements PersonRepository {
                 group.remove(person);
                 return true;
             }
-            else {
+            else if(!group.contains(personId)){
                 throw new IllegalArgumentException();
             }
         }
